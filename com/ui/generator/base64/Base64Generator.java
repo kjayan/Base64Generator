@@ -18,7 +18,7 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.wb.swt.SWTResourceManager;
-import org.eclipse.wb.swt.layout.grouplayout.GroupLayout;
+
 
 public class Base64Generator{
 
