@@ -25,7 +25,7 @@ public class Base64Generator{
 	protected Shell shell;
 	private Text fileName;
 	private Text resultTextArea;
-	private Label errorMsg;
+	private Label errorMsgLabel;
 
 	/**
 	 * Launch the application.
@@ -124,17 +124,17 @@ public class Base64Generator{
 		headerLabel.setAlignment(SWT.CENTER);
 		headerLabel.setText("Base64 Generator");
 		
-		errorMsg = new Label(shell, SWT.NONE);
-		errorMsg.setBounds(378, 103, 190, 25);
-		errorMsg.setForeground(SWTResourceManager.getColor(SWT.COLOR_DARK_RED));
-		errorMsg.setFont(SWTResourceManager.getFont("Palatino Linotype", 12, SWT.BOLD | SWT.ITALIC));
+		errorMsgLabel = new Label(shell, SWT.NONE);
+		errorMsgLabel.setBounds(378, 103, 190, 25);
+		errorMsgLabel.setForeground(SWTResourceManager.getColor(SWT.COLOR_DARK_RED));
+		errorMsgLabel.setFont(SWTResourceManager.getFont("Trebuchet MS", 10, SWT.BOLD | SWT.ITALIC));
 
 
 	}
 	
 	private void parseFileAndGenerate(){
 		resultTextArea.setText("");
-		errorMsg.setText("");
+		errorMsgLabel.setText("");
 		File file = new File(fileName.getText());
 		StringBuilder fileContent = new StringBuilder();
 		FileInputStream fIStream = null;
@@ -148,7 +148,7 @@ public class Base64Generator{
 			
 		}catch(IOException e){
 			System.out.println("Invalid File");
-			errorMsg.setText("Please choose a valid file");
+			errorMsgLabel.setText("Please choose a valid file");
 
 		}finally{
 			try{
